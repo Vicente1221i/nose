@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pregunta Interactiva</title>
+    <style>
+        .button {
+            background-color: green;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .content {
+            text-align: center;
+            margin-top: 50px;
+        }
+        .hidden {
+            display: none;
+        }
+        body {background-color: rgb(124, 188, 220);
+        }
+     
+        
+    </style>
+</head>
+<body>
+    <div class="content">
+        <h1 id="question">¿Es cierto que 1 + 1 = 2?</h1>
+        <button id="yesButton" class="button">Sí</button>
+        <div id="newQuestion" class="hidden">
+            <h1>¿usted va para la vigilia?</h1>
+            <button id="obviousButton" class="button">Sí</button>
+        </div>
+        <div id="response" class="hidden">
+         <h3>yo se que si</h3>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('yesButton').addEventListener('click', function() {
+            document.getElementById('question').classList.add('hidden');
+            document.getElementById('yesButton').classList.add('hidden');
+            document.getElementById('newQuestion').classList.remove('hidden');
+        });
+
+        document.getElementById('obviousButton').addEventListener('click', function() {
+            document.getElementById('newQuestion').classList.add('hidden');
+            document.getElementById('response').classList.remove('hidden');
+        });
+    </script>
+</body>
+</html>
